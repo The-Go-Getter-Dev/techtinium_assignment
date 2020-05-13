@@ -2,7 +2,7 @@ import pandas as pd
 
 # reading data from the multiple source and getting regional level que data with priorty over per unit cost of system
 
-def read_data(regional_availability_file,per_packge_count_file): 
+def read_data_generate_priortyQue(regional_availability_file,per_packge_count_file): 
     try:   
         df=pd.read_csv(regional_availability_file,"\t",header='infer')
         no_of_unit=pd.read_csv(per_packge_count_file,"-",header=None)
@@ -61,7 +61,7 @@ def get_optimal(total_units,time_to_run,regional_availability_file,per_packge_co
     if time_to_run<0 and type(time_to_run)==int:
         raise AttributeError("time must be in hours must be greater then zero and integer")
     
-    regional_priorty_que=read_data(regional_availability_file,per_packge_count_file)
+    regional_priorty_que=read_data_generate_priortyQue(regional_availability_file,per_packge_count_file)
     
     subset_data=get_subset(total_units,regional_priorty_que)
     for region in subset_data.keys():
