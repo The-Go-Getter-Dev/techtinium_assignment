@@ -87,9 +87,9 @@ def get_optimal(total_units,time_to_run,regional_availability_file,per_packge_co
 
 if __name__=="__main__":
     # give total no of units required
-    tot_unit=int(input("give total_units"))
+    tot_unit=int(input("give total_units "))
     # get total_time to run
-    time_to_run=int(input("time to run for"))
+    time_to_run=int(input("time to run for "))
     # file path of the regional data
     regional_availability_file="country_alloc.csv"
     #file path of resource bundle capacity
